@@ -39,3 +39,9 @@
 <hr>
 
 {{product.cars}}
+
+<hr>
+
+<div *ngFor="let car of product.cars">
+  <span>{{car.serial}}</span>
+</div>
