@@ -90,7 +90,10 @@ constructor(private route: ActivatedRoute, private cartService: CartService) {}
       .attr("y", 40)
       .attr("width", 10)
       .attr("height", 10)
-      .attr("fill", "black");
+      .attr("fill", "black").on('mouseover',
+      function(d){
+        console.log('hello i am the dot!!');
+      });
 
       actualX += 20;
     }
