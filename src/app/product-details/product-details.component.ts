@@ -21,6 +21,7 @@ constructor(private route: ActivatedRoute, private cartService: CartService) {}
   ngOnInit() {
       this.route.paramMap.subscribe(params => {
       this.product = products[+params.get('productId')];
+      this.draw();
     });
   }
 
@@ -52,30 +53,39 @@ constructor(private route: ActivatedRoute, private cartService: CartService) {}
 
     this.info = `${s1} ${s2} ${s3} ${s4}`;
 
-    this.draw();
+    // this.draw();
   }
 
   draw() {
+
+  for (let i = 0; i < 3; i++) {
+    console.log ("Block statement execution no." + i);
+  }
+
+    console.log('drawing...');
+
     let selcanvas = d3.select(".child-canvas");
     let canvas = <HTMLCanvasElement>selcanvas.node();
 
     // get the width/height of css properties set the canvas buffer
     let w = parseInt(selcanvas.style("width"));
     let h = parseInt(selcanvas.style("height"));
+
     canvas.width = w;
     canvas.height = h;
 
     let ctx = canvas.getContext("2d");
-    ctx.fillStyle = "magenta";
-    ctx.fillRect(w - 30, 10, 20, 20); 
 
     // remove all the svg children, get dim to draw
     let selsvg = d3.select(".child-svg");
     selsvg.selectAll("*").remove();
     let sw = parseInt(selsvg.style("width"));
     let sh = parseInt(selsvg.style("height"));
+
+    var actualX = 150;
+
     selsvg.append("rect")
-      .attr("x", `${sw - 50}`)
+      .attr("x", `${sw - 150}`)
       .attr("y", 40)
       .attr("width", 10)
       .attr("height", 10)
