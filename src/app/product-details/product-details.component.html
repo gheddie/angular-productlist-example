@@ -20,3 +20,14 @@
   <canvas class="child-canvas"></canvas>
     <div class="child2"></div>
 </div>
+
+<div class="cmds">
+	<button (click)="changeSize(-1)">stretch</button>
+	<button (click)="changeSize(100)">100</button>
+  <button (click)="changeSize(200)">200</button>
+  <button (click)="changeSize(250)">250</button>
+  <button (click)="changeSize(300)">300</button>
+  <button (click)="getSize()">Get Size</button>
+</div>
+
+{{info}}
