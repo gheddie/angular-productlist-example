@@ -84,8 +84,10 @@ constructor(private route: ActivatedRoute, private cartService: CartService) {}
     let sh = parseInt(selsvg.style("height"));
 
     var actualX = 10;
-    for (let i = 0; i < 13; i++) {
-      selsvg.append("rect")
+
+    for (let entry of this.product.cars) {
+      console.log(entry);
+            selsvg.append("rect")
       .attr("x", `${actualX}`)
       .attr("y", 40)
       .attr("width", 10)
@@ -94,7 +96,6 @@ constructor(private route: ActivatedRoute, private cartService: CartService) {}
       function(d){
         console.log('hello i am the dot!!');
       });
-
       actualX += 20;
     }
 
