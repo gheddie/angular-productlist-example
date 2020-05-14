@@ -2,8 +2,7 @@ import { Component, OnInit } from "@angular/core";
 import { ActivatedRoute } from "@angular/router";
 import { products } from "../products";
 import { CartService } from "../cart.service";
-
-import * as d3 from "d3";
+import {CdkDragDrop, moveItemInArray} from '@angular/cdk/drag-drop';
 
 @Component({
   selector: "app-product-details",
@@ -11,6 +10,19 @@ import * as d3 from "d3";
   styleUrls: ["./product-details.component.css"]
 })
 export class ProductDetailsComponent implements OnInit {
+
+  movies = [
+    'Episode I - The Phantom Menace',
+    'Episode II - Attack of the Clones',
+    'Episode III - Revenge of the Sith',
+    'Episode IV - A New Hope',
+    'Episode V - The Empire Strikes Back',
+    'Episode VI - Return of the Jedi',
+    'Episode VII - The Force Awakens',
+    'Episode VIII - The Last Jedi',
+    'Episode IX – The Rise of Skywalker'
+  ];
+
   product;
 
   info = "";
@@ -29,5 +41,10 @@ export class ProductDetailsComponent implements OnInit {
   addToCart(product) {
     this.cartService.addToCart(product);
     window.alert("Your product has been added to the cart!");
+  }
+
+  drop(event: CdkDragDrop<string[]>) {
+    console.log('dropped...');
+    moveItemInArray(this.movies, event.previousIndex, event.currentIndex);
   }
 }

@@ -4,13 +4,11 @@
   <h3>{{ product.name }}</h3>
   <h4>{{ product.price | currency }}</h4>
   <p>{{ product.description }}</p>
-
   <button (click)="addToCart(product)">Buy</button>
-
 </div>
 
 <br>
 
-<span id="main" *ngFor="let car of product.cars">
-  <span>{{car.serial}}</span>
-</span>
+<div cdkDropList class="example-list" (cdkDropListDropped)="drop($event)">
+  <div class="example-box" *ngFor="let movie of movies" cdkDrag>{{movie}}</div>
+</div>
