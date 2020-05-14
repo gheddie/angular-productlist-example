@@ -6,9 +6,3 @@
   <p>{{ product.description }}</p>
   <button (click)="addToCart(product)">Buy</button>
 </div>
-
-<br>
-
-<div cdkDropList class="example-list" (cdkDropListDropped)="drop($event)">
-  <div class="example-box" *ngFor="let movie of movies" cdkDrag>{{movie}}</div>
-</div>

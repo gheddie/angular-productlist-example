@@ -11,12 +11,6 @@ import {CdkDragDrop, moveItemInArray} from '@angular/cdk/drag-drop';
 })
 export class ProductDetailsComponent implements OnInit {
 
-  movies = [
-    'Episode I - The Phantom Menace',
-    'Episode II - Attack of the Clones',
-    'Episode III - Revenge of the Sith'
-  ];
-
   product;
 
   info = "";
@@ -35,10 +29,5 @@ export class ProductDetailsComponent implements OnInit {
   addToCart(product) {
     this.cartService.addToCart(product);
     window.alert("Your product has been added to the cart!");
-  }
-
-  drop(event: CdkDragDrop<string[]>) {
-    console.log('dropped...');
-    moveItemInArray(this.movies, event.previousIndex, event.currentIndex);
   }
 }
