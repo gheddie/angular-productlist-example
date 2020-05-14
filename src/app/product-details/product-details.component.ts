@@ -24,4 +24,8 @@ constructor(private route: ActivatedRoute, private cartService: CartService) {}
     this.cartService.addToCart(product);
     window.alert('Your product has been added to the cart!');
   }
+
+  /**
+   * https://stackblitz.com/edit/angular-canvas-svg-gridfile=src%2Fapp%2Fapp.component.css
+   */
 }
