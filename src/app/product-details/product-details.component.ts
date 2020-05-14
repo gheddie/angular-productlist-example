@@ -58,10 +58,6 @@ constructor(private route: ActivatedRoute, private cartService: CartService) {}
 
   draw() {
 
-  for (let i = 0; i < 3; i++) {
-    console.log ("Block statement execution no." + i);
-  }
-
     console.log('drawing...');
 
     let selcanvas = d3.select(".child-canvas");
@@ -79,17 +75,20 @@ constructor(private route: ActivatedRoute, private cartService: CartService) {}
     // remove all the svg children, get dim to draw
     let selsvg = d3.select(".child-svg");
     selsvg.selectAll("*").remove();
+
     let sw = parseInt(selsvg.style("width"));
     let sh = parseInt(selsvg.style("height"));
-
-    var actualX = 150;
-
-    selsvg.append("rect")
-      .attr("x", `${sw - 150}`)
+    
+    var actualX = 10;
+    for (let i = 0; i < 13; i++) {
+      selsvg.append("rect")
+      .attr("x", `${actualX}`)
       .attr("y", 40)
       .attr("width", 10)
       .attr("height", 10)
       .attr("fill", "black");
+      actualX += 20;
+    }
 
     console.log("canvas", w, h, "svg", sw, sh);
   }
