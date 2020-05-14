@@ -75,7 +75,7 @@ constructor(private route: ActivatedRoute, private cartService: CartService) {}
     // remove all the svg children, get dim to draw
     let selsvg = d3.select(".child-svg").on('mouseover',
       function(d){
-        console.log('hello i am the canvas!!');
+        // console.log('hello i am the canvas!!');
       });
 
     selsvg.selectAll("*").remove();
@@ -94,7 +94,7 @@ constructor(private route: ActivatedRoute, private cartService: CartService) {}
       .attr("height", 10)
       .attr("fill", "black").on('mouseover',
       function(d){
-        console.log('hello i am the dot!!');
+        console.log('hello i am the brand :' + entry.name +  ', value: ' + entry.serial);
       });
       actualX += 20;
     }

@@ -3,19 +3,32 @@ export const products = [
     name: 'Phone XL',
     price: 799,
     description: 'A large phone with one of the best screens',
-    'cars':[ 'Ford', 'BMW', 'Fiat', 'Ford', 'BMW', 'Fiat' ]
+    'cars':[ 
+      {name :'Ford', serial: '123'},
+      {name :'BMW', serial: '456'},
+      {name :'Austin', serial: '789'}
+      ]
   },
   {
     name: 'Phone Mini',
     price: 699,
     description: 'A great phone with one of the best cameras',
-    'cars':[ 'Ford', 'BMW' ]
+    'cars':[ 
+      {name :'Audi', serial: '543'},
+      {name :'Peugeot', serial: '111'}
+      ]
   },
   {
     name: 'Phone Standard',
     price: 299,
     description: '',
-    'cars':[ 'Ford', 'BMW', 'Fiat' ]
+      'cars':[ 
+      {name :'Hummer', serial: '11-22-33'},
+      {name :'Nissan', serial: '6754'},
+      {name :'Borgward', serial: '66-921'},
+      {name :'Mercedes', serial: '88-777'},
+      {name :'VW', serial: '111-22'}
+      ]
   }
 ];
 
